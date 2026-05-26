@@ -2,6 +2,12 @@ node_modules
 .next
 dist
 
+# TypeScript build cache
+tsconfig.tsbuildinfo
+
+# Claude AI memory
+.claude/
+
 # Environment files - never commit secrets
 .env
 .env.*

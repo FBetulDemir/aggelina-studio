@@ -1,3 +1,6 @@
+# Claude AI memory
+.claude/
+
 # Environment files - never commit secrets
 .env
 .env.*
