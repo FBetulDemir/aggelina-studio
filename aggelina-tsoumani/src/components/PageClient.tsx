@@ -11,6 +11,7 @@ import { AboutSection } from "./AboutSection";
 import { ContactSection } from "./ContactSection";
 import { FooterSection } from "./FooterSection";
 import { AdminPanel } from "./AdminPanel";
+import { getArtworks, getEvents } from "@/lib/firestore";
 import { initialArtworks, initialEvents } from "@/lib/data";
 import type { Artwork, Event } from "@/types";
 
@@ -38,6 +39,17 @@ export function PageClient() {
     const handleScroll = () => setIsScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    Promise.all([getArtworks(), getEvents()])
+      .then(([firestoreArtworks, firestoreEvents]) => {
+        if (firestoreArtworks.length > 0) setArtworks(firestoreArtworks);
+        if (firestoreEvents.length > 0) setEvents(firestoreEvents);
+      })
+      .catch((err) => {
+        console.error("Firestore fetch failed:", err);
+      });
   }, []);
 
   return (
@@ -68,6 +80,7 @@ export function PageClient() {
         setActiveFilter={setActiveFilter}
         filters={filters}
         filteredItems={filteredItems}
+        artworks={artworks}
       />
       <WorkshopsSection events={events} />
       <AboutSection />

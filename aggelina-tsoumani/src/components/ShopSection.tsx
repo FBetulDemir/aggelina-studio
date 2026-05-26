@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { initialArtworks } from "@/lib/data";
 import type { Artwork } from "@/types";
 
 interface ShopSectionProps {
@@ -11,6 +10,7 @@ interface ShopSectionProps {
   setActiveFilter: (filter: string) => void;
   filters: string[];
   filteredItems: Artwork[];
+  artworks: Artwork[];
 }
 
 export function ShopSection({
@@ -18,12 +18,13 @@ export function ShopSection({
   setActiveFilter,
   filters,
   filteredItems,
+  artworks,
 }: ShopSectionProps) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const getCategoryCount = (category: string) => {
-    if (category === "All") return initialArtworks.length;
-    return initialArtworks.filter((art) => art.category === category).length;
+    if (category === "All") return artworks.length;
+    return artworks.filter((art) => art.category === category).length;
   };
 
   return (

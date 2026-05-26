@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Menu, X } from "lucide-react";
+import { LINKS } from "@/lib/links";
 
 interface NavigationProps {
   isScrolled: boolean;
@@ -76,7 +77,7 @@ export function Navigation({
               <span className="absolute bottom-0 left-0 w-0 h-px bg-ink-primary group-hover:w-full transition-all duration-300" />
             </button>
             <a
-              href="https://instagram.com"
+              href={LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:opacity-60 transition-opacity text-ink-primary"

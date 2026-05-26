@@ -2,7 +2,7 @@ import type { Artwork, Event } from "@/types";
 
 export const initialArtworks: Artwork[] = [
   {
-    id: 1,
+    id: "1",
     title: "Geometric Dreams",
     medium: "Linocut Print",
     year: "2025",
@@ -11,9 +11,10 @@ export const initialArtworks: Artwork[] = [
     image:
       "https://images.unsplash.com/photo-1760292343796-5299717e6944?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     inStock: true,
+    description: "A bold geometric composition carved by hand in linoleum.",
   },
   {
-    id: 2,
+    id: "2",
     title: "Watercolor Abstract",
     medium: "Original Painting",
     year: "2025",
@@ -22,9 +23,10 @@ export const initialArtworks: Artwork[] = [
     image:
       "https://images.unsplash.com/photo-1760292343750-b476acc543b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     inStock: true,
+    description: "Layers of translucent watercolor on cold-press paper.",
   },
   {
-    id: 3,
+    id: "3",
     title: "Carving Process Study",
     medium: "Linocut",
     year: "2024",
@@ -33,9 +35,10 @@ export const initialArtworks: Artwork[] = [
     image:
       "https://images.unsplash.com/photo-1730134426941-1def6b725da3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     inStock: true,
+    description: "An exploration of texture through relief carving.",
   },
   {
-    id: 4,
+    id: "4",
     title: "Ceramic Vessel Set",
     medium: "Ceramics",
     year: "2024",
@@ -44,9 +47,10 @@ export const initialArtworks: Artwork[] = [
     image:
       "https://images.unsplash.com/photo-1740329362219-08c21cfe3dbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     inStock: false,
+    description: "Set of three hand-thrown vessels with ash glaze.",
   },
   {
-    id: 5,
+    id: "5",
     title: "Relief Print Series",
     medium: "Printmaking",
     year: "2024",
@@ -55,9 +59,10 @@ export const initialArtworks: Artwork[] = [
     image:
       "https://images.unsplash.com/photo-1677094507131-f5f5abce1242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     inStock: true,
+    description: "Part of an ongoing series exploring natural forms.",
   },
   {
-    id: 6,
+    id: "6",
     title: "Handcrafted Bowls",
     medium: "Ceramics",
     year: "2024",
@@ -66,12 +71,13 @@ export const initialArtworks: Artwork[] = [
     image:
       "https://images.unsplash.com/photo-1724709163217-833a8c96aba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
     inStock: true,
+    description: "Functional bowls with a raw, handmade finish.",
   },
 ];
 
 export const initialEvents: Event[] = [
   {
-    id: 1,
+    id: "1",
     title: "Linoleum Printmaking Workshop",
     date: "2026-05-09",
     time: "Saturday · 14:15–16:45 CEST",
@@ -83,7 +89,7 @@ export const initialEvents: Event[] = [
     isUpcoming: true,
   },
   {
-    id: 2,
+    id: "2",
     title: "Linocut Workshop",
     date: "2026-04-15",
     time: "Saturday · 14:00–16:30 CEST",

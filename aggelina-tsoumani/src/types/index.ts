@@ -1,5 +1,5 @@
 export interface Artwork {
-  id: number;
+  id: string;
   title: string;
   medium: string;
   year: string;
@@ -7,10 +7,11 @@ export interface Artwork {
   price: number;
   image: string;
   inStock: boolean;
+  description?: string;
 }
 
 export interface Event {
-  id: number;
+  id: string;
   title: string;
   date: string;
   time: string;

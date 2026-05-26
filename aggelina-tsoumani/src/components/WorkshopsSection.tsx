@@ -1,7 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import { motion } from "motion/react";
+import { SectionWrapper } from "./ui/SectionWrapper";
+import { SectionHeading } from "./ui/SectionHeading";
+import { Button } from "./ui/Button";
 import type { Event } from "@/types";
 
 interface WorkshopsSectionProps {
@@ -12,19 +15,11 @@ export function WorkshopsSection({ events }: WorkshopsSectionProps) {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <section
-      id="workshops"
-      ref={ref}
-      className="py-32 px-6 lg:px-12 bg-surface-off-white"
-    >
-      <div className="max-w-8xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-[48px] lg:text-[64px] mb-16 leading-[1.1] font-serif text-ink-primary"
-        >
+    <SectionWrapper id="workshops" bg="off-white" className="ref-target">
+      <div ref={ref}>
+        <SectionHeading inView={inView} className="mb-16">
           Workshops &amp; Classes
-        </motion.h2>
+        </SectionHeading>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {events.map((event, index) => (
@@ -41,15 +36,19 @@ export function WorkshopsSection({ events }: WorkshopsSectionProps) {
             >
               <div
                 className={`inline-block px-4 py-2 mb-6 text-[11px] tracking-[0.1em] uppercase font-medium text-white ${
-                  event.isUpcoming ? "bg-accent-deep-blue" : "bg-surface-clay-mid"
+                  event.isUpcoming
+                    ? "bg-accent-deep-blue"
+                    : "bg-surface-clay-mid"
                 }`}
               >
-                {new Date(event.date).toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                })}
+                {event.date
+                  ? new Date(event.date + "T00:00:00").toLocaleDateString(
+                      "en-US",
+                      { month: "short", day: "numeric", year: "numeric" }
+                    )
+                  : event.date}
               </div>
+
               <h3 className="text-[24px] lg:text-[28px] mb-3 leading-[1.2] font-serif text-ink-primary">
                 {event.title}
               </h3>
@@ -62,20 +61,21 @@ export function WorkshopsSection({ events }: WorkshopsSectionProps) {
               <p className="text-[17px] leading-[1.75] mb-6 text-text-muted">
                 {event.description}
               </p>
+
               <div className="flex items-center justify-between">
                 <span className="text-[32px] font-medium text-accent-linocut-red font-serif">
                   €{event.price}
                 </span>
                 {event.isUpcoming && (
-                  <button className="px-8 py-3 bg-accent-linocut-red text-white text-[13px] font-medium rounded-md">
+                  <Button size="md" className="rounded-md">
                     Contact to Book
-                  </button>
+                  </Button>
                 )}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }
