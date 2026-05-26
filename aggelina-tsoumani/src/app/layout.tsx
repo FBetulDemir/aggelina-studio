@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   title: "Aggelina Tsoumani — Printmaker & Artist",
   description:
     "Original prints, ceramics, and printmaking workshops by Aggelina Tsoumani, based in Gothenburg.",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
