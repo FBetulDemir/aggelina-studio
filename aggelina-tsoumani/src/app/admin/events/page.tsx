@@ -121,15 +121,6 @@ export default function EventsAdminPage() {
     }
   };
 
-  const fmt = (date: string) => {
-    if (!date) return "";
-    return new Date(date + "T00:00:00").toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    });
-  };
-
   return (
     <div>
       {/* Header */}

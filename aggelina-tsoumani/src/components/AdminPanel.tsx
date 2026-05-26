@@ -7,17 +7,13 @@ import type { Artwork, Event } from "@/types";
 
 interface AdminPanelProps {
   artworks: Artwork[];
-  setArtworks: React.Dispatch<React.SetStateAction<Artwork[]>>;
   events: Event[];
-  setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
   onClose: () => void;
 }
 
 export function AdminPanel({
   artworks,
-  setArtworks: _setArtworks,
   events,
-  setEvents: _setEvents,
   onClose,
 }: AdminPanelProps) {
   const [activeTab, setActiveTab] = useState<"artworks" | "events">("artworks");

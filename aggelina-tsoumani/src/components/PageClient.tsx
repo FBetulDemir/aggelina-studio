@@ -59,9 +59,7 @@ export function PageClient() {
       {showAdmin && (
         <AdminPanel
           artworks={artworks}
-          setArtworks={setArtworks}
           events={events}
-          setEvents={setEvents}
           onClose={() => setShowAdmin(false)}
         />
       )}
@@ -85,7 +83,7 @@ export function PageClient() {
       <WorkshopsSection events={events} />
       <AboutSection />
       <ContactSection />
-      <FooterSection scrollToSection={scrollToSection} />
+      <FooterSection />
     </div>
   );
 }

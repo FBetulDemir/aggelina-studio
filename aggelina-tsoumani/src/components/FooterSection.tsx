@@ -3,11 +3,7 @@
 import Link from "next/link";
 import { LINKS } from "@/lib/links";
 
-interface FooterSectionProps {
-  scrollToSection: (id: string) => void;
-}
-
-export function FooterSection({ scrollToSection: _scrollToSection }: FooterSectionProps) {
+export function FooterSection() {
   return (
     <footer className="py-12 px-6 lg:px-12 border-t border-ink-primary/10">
       <div className="max-w-8xl mx-auto flex flex-col items-center gap-4 text-center">
